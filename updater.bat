@@ -28,14 +28,24 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :-------------------------------------- 
+echo Checking...
 IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
-set l="C:\Program Files (x86)\AvianCmd"
-) ELSE (
-set l=
+if exist "C:\Program Files (x86)\AvianCmd\launcher.bat" (
+set l="C:\Program Files (x86)\AvianCmd\"
 )
-echo Updateing Launcher...
+) ELSE (
+if exist "%SystemDrive%\Program Files\AvianCmd\launcher.bat" (
+set l="%SystemDrive%\Program Files\AvianCmd\"
+)
+)
+%SystemDrive%
+if %l%=="" (
+echo Can't find launcher folder.
 set /p l=Please Type launcher folder.EX:"C:\Program Files (x86)\AvianCmd"
+)
+%SystemDrive%
 cd %l%
+echo Updateing Launcher...
 echo Downloading...
 curl https://raw.githubusercontent.com/AvianJay/AvianCmd/main/launcher.bat --output launcher.bat
 echo Updated.
