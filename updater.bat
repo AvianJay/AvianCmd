@@ -28,8 +28,13 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :-------------------------------------- 
+IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
+set l="C:\Program Files (x86)\AvianCmd"
+) ELSE (
+set l=
+)
 echo Updateing Launcher...
-set /p l=Please Type launcher folder.
+set /p l=Please Type launcher folder.EX:"C:\Program Files (x86)\AvianCmd"
 cd %l%
 echo Downloading...
 curl https://raw.githubusercontent.com/AvianJay/AvianCmd/main/launcher.bat --output launcher.bat
