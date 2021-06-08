@@ -29,5 +29,9 @@ if '%errorlevel%' NEQ '0' (
     CD /D "%~dp0"
 :-------------------------------------- 
 echo Updateing Launcher...
+set /p l=Please Type launcher folder.
+cd %l%
 echo Downloading...
 curl https://raw.githubusercontent.com/AvianJay/AvianCmd/main/launcher.bat --output launcher.bat
+echo Updated.
+pause
