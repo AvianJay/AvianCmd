@@ -45,6 +45,6 @@ goto ok
 set /p launch=What Do You Want To Do?(l=Launch/u=Update/ul=Update Launcher)
 if %launch% == l (cd %USERPROFILE%/ajcmd & start startcmd.bat & exit)
 if %launch% == u (goto update)
-if %launch% == ul (cd %USERPROFILE%/ajcmd & start updater.bat)
+if %launch% == ul (cd %USERPROFILE%/ajcmd & start updater.bat & exit)
 echo Please type l or u or ul.
 goto ok
