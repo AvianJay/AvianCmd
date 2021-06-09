@@ -1,4 +1,5 @@
 @echo off
+title AvianCmd Updater
 
 :: BatchGotAdmin
 :-------------------------------------
@@ -18,7 +19,7 @@ if '%errorlevel%' NEQ '0' (
 :UACPrompt
     echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
     set params= %*
-    echo UAC.ShellExecute "cmd.exe", "/c ""%~s0"" %params:"=""%", "", "runas", 1 >> "%temp%\getadmin.vbs"
+    echo UAC.ShellExecute "cmd.exe", " ""%~s0"" %params:"=""%", "", "runas", 1 >> "%temp%\getadmin.vbs"
 
     "%temp%\getadmin.vbs"
     del "%temp%\getadmin.vbs"
