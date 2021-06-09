@@ -6,11 +6,12 @@ cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) &&
 
 :checkPrivileges
 NET FILE 1>NUL 2>NUL
-if '%errorlevel%' == '0' ( goto gotPrivileges ) else ( goto getPrivileges )
+if '%errorlevel%' == '0' ( goto start ) else ( goto getPrivileges )
 
 :getPrivileges
 exit /B
 
+:start
 echo Checking...
 IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
 if exist "C:\Program Files (x86)\AvianCmd\launcher.bat" (
