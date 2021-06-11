@@ -14,13 +14,9 @@ exit /B
 :start
 echo Checking...
 IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
-if exist "C:\Program Files (x86)\AvianCmd\launcher.bat" (
-set l="C:\Program Files (x86)\AvianCmd\"
-)
-) ELSE (
-if exist "%SystemDrive%\Program Files\AvianCmd\launcher.bat" (
 set l="%SystemDrive%\Program Files\AvianCmd\"
-)
+) ELSE (
+set l="%SystemDrive%\Program Files (x86)\AvianCmd\"
 )
 %SystemDrive%
 if %l%=="" (
