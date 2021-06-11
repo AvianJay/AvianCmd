@@ -33,6 +33,11 @@ goto ask
 cd %USERPROFILE%
 mkdir ajcmd
 cd ajcmd
+echo Deleteing...
+del aj.bat
+del cmd.bat
+del startcmd.bat
+del updater.bat
 echo Downloading...
 curl https://raw.githubusercontent.com/AvianJay/AvianCmd/main/aj.bat --output aj.bat
 curl https://raw.githubusercontent.com/AvianJay/AvianCmd/main/cmd.bat --output cmd.bat
